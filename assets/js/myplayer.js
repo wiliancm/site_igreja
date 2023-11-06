@@ -2,8 +2,8 @@ var mediaPlayer;
 var NowArtistTitle = "";
 
 $(document).ready(function () {
-    //getmetadata();
-    //setInterval(getmetadata, 10000);
+    getmetadata();
+    setInterval(getmetadata, 10000);
 });
 
 function initialiseMediaPlayer() {
