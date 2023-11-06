@@ -22,6 +22,56 @@
             <nav id="nav">
                 <ul>
                     <li class="special">
+                        <a href="#menuradio" class="menuToggleRadio"><span><i id="iconRadio" class="icon solid fa-play"></i> NA Rádio</span></a>
+                        <!-- Radio -->
+                        <div id="menuradio">
+                            <h4 style="margin-left: 10px; width: 100%;">
+                                NA Rádio
+                            </h4>
+                            <div id="media-player" style="visibility:visible;position: absolute; left: -50000px;">
+                                <audio id="media-audio" preload="">
+                                    <source src="https://ssl.evsportugal.net:8040/stream" type="audio/mpeg">
+                                </audio>
+                                <div id="media-controls"></div>
+                            </div>
+                            <div id="PlayingNow" class="item my-auto">
+                                <div style="margin-left: 10px;">
+                                    <div class="d-flex flex-row justify-content-center">
+                                        <div class="FrameCover">
+                                            <img class="coveralbum" src="https://www.naradio.pt/siteradiov2/images/noalbum.jpg " style="width: 100%;">
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: 10px; width: 100%;">
+                                        <div id="idtitlect" class="d-flex flex-row justify-content-center mt-1 ">
+                                            <div id="tracktitle" class="tracktitle">Título Desconhecido</div>
+                                        </div>
+                                        <div id="idartistct" class="d-flex flex-row justify-content-center">
+                                            <div id="trackartist" class="trackartist">Artista Desconhecido</div>
+                                        </div>
+                                        <div id="idalbumct" class="d-flex flex-row justify-content-center">
+                                            <div id="trackalbum" class="trackalbum">Album Desconhecido</div>
+                                        </div>
+                                    </div>
+                                    <div id="media-controls">                                         
+                                        <button id="play-pause-button" class="play" title="play" onclick="togglePlayPause();" style="width: 100%; margin-top: 10px;"><i class="icon solid fa-play"></i> play</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div id="playerbar" class="d-flex flex-row justify-content-center">
+                                <div id="media-controls">
+                                    <button id="play-pause-button" class="play" title="play" onclick="togglePlayPause();">play</button>
+                                </div>
+                            </div>-->
+                            <div id="trackdata" style="visibility:visible">
+                                <span id="auxTitle" style="visibility:hidden"></span>
+                                <span id="auxAlbum" style="visibility:hidden"></span>
+                                <span id="auxArtist" style="visibility:hidden"></span>
+                                <span id="statePlaying" style="visibility:hidden"></span>
+                            </div>
+                        </div>
+                        <!-- Fim Radio -->
+                    </li>
+                    <li class="special">
                         <a href="#menu" class="menuToggle"><span>Menu</span></a>
                         <div id="menu">
                             <ul>
@@ -60,50 +110,6 @@
             <a href="#one" class="more scrolly">Veja Mais</a>
         </section>
 
-        <!-- Radio -->
-        <div style="position: fixed; top: 3em; right: 0; background: rgba(0,0,0,0.5); width: 300px; height: 200px; ">
-            <h4 style="text-align: center;">
-                NA Rádio
-            </h4>
-            <div id="media-player" style="visibility:visible;position: absolute; left: -50000px;">
-                <audio id="media-audio" preload="">
-                    <source src="https://ssl.evsportugal.net:8040/stream" type="audio/mpeg">
-                </audio>
-                <div id="media-controls"></div>
-            </div>
-            <div id="PlayingNow" class="item my-auto">
-                <div>
-                    <div class="d-flex flex-row justify-content-center">
-                        <div class="FrameCover">
-                            <img class="coveralbum" src="" style="width: 45%; float: left;">
-                        </div>
-                    </div>
-                    <div style="margin-left: 10px; float: left; width: 50%; font-size: 10pt;">
-                        <div id="idtitlect" class="d-flex flex-row justify-content-center mt-1 ">
-                            <div id="tracktitle" class="tracktitle"></div>
-                        </div>
-                        <div id="idartistct" class="d-flex flex-row justify-content-center">
-                            <div id="trackartist" class="trackartist"></div>
-                        </div>
-                        <div id="idalbumct" class="d-flex flex-row justify-content-center">
-                            <div id="trackalbum" class="trackalbum"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="playerbar" class="d-flex flex-row justify-content-center">
-                <div id="media-controls">
-                    <button id="play-pause-button" class="play" title="play" onclick="togglePlayPause();">play</button>
-                </div>
-            </div>
-            <div id="trackdata" style="visibility:visible">
-                <span id="auxTitle" style="visibility:hidden"></span>
-                <span id="auxAlbum" style="visibility:hidden"></span>
-                <span id="auxArtist" style="visibility:hidden"></span>
-                <span id="statePlaying" style="visibility:hidden"></span>
-            </div>
-        </div>
-        <!-- Fim Radio -->
         <!-- One -->
         <section id="one" class="wrapper style1 special">
             <div class="inner">

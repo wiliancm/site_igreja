@@ -65,6 +65,20 @@
 				visibleClass: 'is-menu-visible'
 			});
 
+	$('#menuradio')
+		.append('<a href="#menuradio" class="close"></a>')
+		.appendTo($body)
+		.panel({
+			delay: 500,
+			hideOnClick: true,
+			hideOnSwipe: true,
+			resetScroll: true,
+			resetForms: true,
+			side: 'right',
+			target: $body,
+			visibleClass: 'is-menuradio-visible'
+		});
+
 	// Header.
 		if ($banner.length > 0
 		&&	$header.hasClass('alt')) {
