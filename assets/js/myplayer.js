@@ -2,55 +2,52 @@ var mediaPlayer;
 var NowArtistTitle = "";
 
 $(document).ready(function () {
-    getmetadata();
-    setInterval(getmetadata, 10000);
+    //getmetadata();
+    //setInterval(getmetadata, 10000);
 });
 
 function initialiseMediaPlayer() {
-
     mediaPlayer = document.getElementById('media-audio');
     mediaPlayer.controls = false;
-
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-
     initialiseMediaPlayer();
     mediaPlayer.addEventListener('play', function () {
         var btn = document.getElementById('play-pause-button');
-        changeButtonType(btn, 'pause');
+        changeButtonType(btn, '<i class="icon solid fa-pause"></i> Pause');
     }, false);
 
 
     mediaPlayer.addEventListener('pause', function () {
         var btn = document.getElementById('play-pause-button');
-        changeButtonType(btn, 'play');
+        changeButtonType(btn, '<i class="icon solid fa-play"></i> Play');
     }, false);
-
 }, false);
 
 
 function togglePlayPause() {
-
     var btn = document.getElementById('play-pause-button');
     var stPlaying = document.getElementById('statePlaying');
-
+    var icon = document.getElementById('iconRadio'); 
 
     if (mediaPlayer.paused || mediaPlayer.ended) {
         btn.title = 'pause';
-        btn.innerHTML = 'pause';
+        btn.innerHTML = '<i class="icon solid fa-pause"></i> Pause';
         btn.className = 'pause';
         mediaPlayer.load(mediaPlayer.currentSrc);
         mediaPlayer.play();
         stPlaying.value = '1';
+        icon.className = 'icon solid fa-pause';
     }
     else {
         btn.title = 'play';
-        btn.innerHTML = 'play';
+        btn.innerHTML = '<i class="icon solid fa-play"></i> Play';
         btn.className = 'play';
         mediaPlayer.pause();
         mediaPlayer.currentTime = 0;
         stPlaying.value = '0';
+        icon.className = 'icon solid fa-play';
     }
 }
 
@@ -73,17 +70,20 @@ function RefreshAlbumData() {
 
     var btn = document.getElementById('play-pause-button');
     var statePlaying = document.getElementById('statePlaying');
+    var icon = document.getElementById('iconRadio'); 
 
     if (statePlaying.value == "1") {
         btn.title = 'pause';
-        btn.innerHTML = 'pause';
+        btn.innerHTML = '<i class="icon solid fa-pause"></i> Pause';
         btn.className = 'pause';
+        icon.className = 'icon solid fa-pause';
     }
 
     else if (statePlaying.value == "0") {
         btn.title = 'play';
-        btn.innerHTML = 'play';
+        btn.innerHTML = '<i class="icon solid fa-play"></i> Play';
         btn.className = 'play';
+        icon.className = 'icon solid fa-play';
     }
 }
 
